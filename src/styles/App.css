@@ -1,0 +1,25 @@
+
+
+font-face {
+    font-family: 'Satohi';
+    src: url('/fonts/Satohi-Variable.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+font-face {
+    font-family: 'SatohiItalic';
+    src: url('/fonts/Satohi-VariableItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.Satoshi {
+    font-family: 'Satohi';
+}
+
+.SatoshiItalic {
+    font-family: 'SatohiItalic';
+}
+

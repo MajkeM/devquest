@@ -1,0 +1,19 @@
+Complete structure and basics 
+
+main page - register/login => DevQuest app. Do basis and router 
+
+    do router in app and do simple design in dashboard <left HERE need to fix the satosshi font family
+    set up Redux and database.
+    simple design in in quests 
+    do the api 
+    do the first working quest => working leet code problem. with coding sandbox and code verifier. If correct => button with claim rewards will appear.
+
+-------------------------------------------------------------------------------------------------------
+
+1. main page. simple page
+2. do register and login without logic just let the finish button transfer user to the app
+3. make router through the app, so dashboard, quests, profile, settings,credit
+4. do the quests api (1 test quest)
+5. complete the quest. Do the sanbox. Code verifier. Rewards claiming. 
+
+now you have the basics and you can think of what to do next. 

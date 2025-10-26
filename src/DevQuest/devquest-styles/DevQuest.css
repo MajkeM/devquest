@@ -1,0 +1,198 @@
+@font-face {
+    font-family: 'Satohi';
+    src: url('./../fonts/Satohi-Variable.woff2') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+:root {
+    --borderColor: #7A7A7A;
+    --primaryColor: white;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+
+.devquest-layout {
+    display: flex;
+    justify-content: space-around;
+    height: auto;
+    width: auto;
+    width: 100%;
+    height: 100vh;
+    background: #0A0118;
+    background: linear-gradient(165deg, rgba(10, 1, 24, 1) 25%, rgba(92, 72, 152, 1) 100%);
+
+}
+
+.devquest-nav {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+}
+
+.devquest-nav .link {
+    text-decoration: none;
+    font-family: "Satohi";
+    color: var(--primaryColor);
+}
+
+.Outlet {
+    width: 100%;
+    height: 100%;
+    color: white;
+
+}
+
+.background-container {
+    position: relative;
+    width: 98%;
+    border: 1px solid var(--bordercolor);
+    border-radius: 10px;
+    height: 95%;
+    margin-top: 2%;
+    overflow: hidden;
+}
+
+        .background-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px) contrast(1.7);
+            /* Jemné doladění bluru */
+            will-change: transform;
+        }
+
+        /* --- NOVÝ TŘÍVRSTVÝ SYSTÉM PRO PASTELOVOU MODROU --- */
+
+        /* VRSTVA 1: OBROVSKÁ VNĚJŠÍ AURA - pastelový základ */
+        .blob-blue-aura {
+            width: 100vw;
+            height: 100vh;
+            /* Maximální velikost pro jemnou záři */
+            background: #A2C3FF;
+            top: -50vh;
+            right: -50vw;
+            animation: breathe 55s infinite alternate;
+            opacity: 0.7;
+        }
+
+        /* VRSTVA 2: HLAVNÍ BARVA - definuje odstín */
+        .blob-blue-main {
+            width: 80vw;
+            height: 80vh;
+            background: #a3d5f7;
+            top: -40vh;
+            right: -40vw;
+            animation: breathe 45s infinite alternate-reverse;
+            opacity: 0.85;
+        }
+
+        /* VRSTVA 3: ZÁŘÍCÍ JÁDRO - zdroj světla */
+        .blob-blue-hotspot {
+            width: 50vw;
+            height: 50vh;
+            background: #e1f5fe;
+            top: -25vh;
+            right: -25vw;
+            animation: breathe 35s infinite alternate;
+            opacity: 0.9;
+        }
+
+        /* --- PŘEKALIBROVANÉ PŘECHODY --- */
+        /* Nyní jsou umístěny tak, aby plynule navazovaly na novou modrou */
+
+        .blob-lavender-bridge {
+            width: 70vw;
+            height: 70vh;
+            background: #958cf7;
+            top: -15vh;
+            left: -10vw;
+            animation: moveGeneral 71s infinite alternate;
+            opacity: 0.65;
+        }
+
+        .blob-orchid-glow {
+            width: 50vw;
+            height: 50vh;
+            background: #d37cef;
+            top: 20vh;
+            left: 15vw;
+            animation: moveGeneral 61s infinite alternate-reverse;
+            opacity: 0.75;
+        }
+
+        /* --- FIALOVÁ & MAGENTA ZÁKLADNA --- */
+        /* Mírně upraveno, aby vyvážilo sílu modré */
+
+        .blob-magenta-main {
+            width: 75vw;
+            height: 75vh;
+            background: #af31ab;
+            bottom: -40vh;
+            left: -15vw;
+            animation: moveGeneral 73s infinite alternate;
+            opacity: 0.85;
+        }
+
+        .blob-purple-base {
+            width: 70vw;
+            height: 70vh;
+            background: #3b185f;
+            bottom: -50vh;
+            left: -40vw;
+            animation: moveGeneral 97s infinite alternate;
+            opacity: 0.9;
+        }
+
+
+        /* --- DEDIKOVANÉ ANIMACE --- */
+
+        /* Nová animace "dýchání" pro světelný zdroj v rohu */
+        @keyframes breathe {
+            from {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.7;
+            }
+
+            to {
+                transform: translate(-4vw, 4vh) scale(1.15);
+                opacity: 0.9;
+            }
+        }
+
+        /* Obecná animace pro zbytek blobů */
+        @keyframes moveGeneral {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(-10vw, 8vh) scale(0.95);
+            }
+
+            100% {
+                transform: translate(5vw, -5vh) scale(1.05);
+            }
+        }
