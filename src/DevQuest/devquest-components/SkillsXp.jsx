@@ -1,8 +1,31 @@
 import "./../devquest-styles/SkillsXp.css";
-
+import { useSelector } from "react-redux";
 
 
 export default function SkillsXp() {
+
+        // today's xp progress
+        const cyberXpToday = useSelector((state) => state.counterProgressXpToday.cyber);
+        const frontendXpToday = useSelector((state) => state.counterProgressXpToday.frontend);
+        const backendXpToday = useSelector((state) => state.counterProgressXpToday.backend);
+        const itXpToday = useSelector((state) => state.counterProgressXpToday.it);
+        const algorythmsXpToday = useSelector((state) => state.counterProgressXpToday.algorythms);
+    
+        // this week's xp progress
+        const cyberXpThisWeek = useSelector((state) => state.counterProgressXpThisWeek.cyber);
+        const frontendXpThisWeek = useSelector((state) => state.counterProgressXpThisWeek.frontend);
+        const backendXpThisWeek = useSelector((state) => state.counterProgressXpThisWeek.backend);
+        const itXpThisWeek = useSelector((state) => state.counterProgressXpThisWeek.it);
+        const algorythmsXpThisWeek = useSelector((state) => state.counterProgressXpThisWeek.algorythms);
+    
+        // overall xp progress
+        const cyberXpOverall = useSelector((state) => state.counterProgressXpOverall.cyber);
+        const frontendXpOverall = useSelector((state) => state.counterProgressXpOverall.frontend);
+        const backendXpOverall = useSelector((state) => state.counterProgressXpOverall.backend);
+        const itXpOverall = useSelector((state) => state.counterProgressXpOverall.it);
+        const algorythmsXpOverall = useSelector((state) => state.counterProgressXpOverall.algorythms);
+    
+
     return (
 
 <div className="parent">
@@ -16,21 +39,22 @@ export default function SkillsXp() {
     <div className="div8">IT</div>
     <div className="div9">Cyber</div>
     <div className="div10">Algorithms</div>
-    <div className="div11">0 xp</div>
-    <div className="div12">0 xp</div>
-    <div className="div13">0 xp</div>
-    <div className="div14">0 xp</div>
-    <div className="div15">0 xp</div>
-    <div className="div21">0 xp</div>
-    <div className="div16">0 xp</div>
-    <div className="div17">0 xp</div>
-    <div className="div18">0 xp</div>
-    <div className="div19">0 xp</div>
-    <div className="div20">0 xp</div>
-    <div className="div22">0 xp</div>
-    <div className="div23">0 xp</div>
-    <div className="div24">0 xp</div>
-    <div className="div25">0 xp</div>
+
+    <div className="div11">{frontendXpToday} xp</div>
+    <div className="div12">{frontendXpThisWeek} xp</div>
+    <div className="div13">{backendXpToday} xp</div>
+    <div className="div14">{backendXpThisWeek} xp</div>
+    <div className="div15">{frontendXpOverall} xp</div>
+    <div className="div21">{itXpOverall} xp</div>
+    <div className="div16">{backendXpOverall} xp</div>
+    <div className="div17">{itXpToday} xp</div>
+    <div className="div18">{itXpThisWeek} xp</div>
+    <div className="div19">{cyberXpToday} xp</div>
+    <div className="div20">{cyberXpThisWeek} xp</div>
+    <div className="div22">{cyberXpOverall} xp</div>
+    <div className="div23">{algorythmsXpToday} xp</div>  
+    <div className="div24">{algorythmsXpThisWeek} xp</div>
+    <div className="div25">{algorythmsXpOverall} xp</div>
 </div>
     );
 }

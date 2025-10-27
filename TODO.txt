@@ -2,8 +2,23 @@ Complete structure and basics
 
 main page - register/login => DevQuest app. Do basis and router 
 
-    do router in app and do simple design in dashboard <left HERE need to fix the satosshi font family
+    app router ✅
+    devquest layout router ✅
+    dashboard ✅
+    dashboard design ✅
+    dashboard redux ✅
+    profile design ❌
+    profile router ❌
+    profiler edit about me ❌
+    profile redux ❌
+    quests layout ❌
+    quests design ❌
+    questss redux ❌
+
+    .......
     
+
+
     set up Redux and database.
     simple design in in quests 
     do the api 

@@ -108,7 +108,6 @@ body {
     font-size: clamp(3.3rem,6vw, 8rem);
     font-weight:900;
     color: #ffffff;
-
 }
 
 .name-of-user {
@@ -126,16 +125,27 @@ body {
     font-family: "Satoshi";
 }
 
+.streak-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 .streak-number-container {
     font-family: "Satoshi";
     text-align: center;
     width: 60%;
-    height: 40%;
+    height: 100%;
     margin: auto auto;
 
     color: #ffffff;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
 }
 
 .streak-fire {

@@ -1,4 +1,7 @@
+import NameDashboard  from './../devquest-components/NameDashboard';
 import {useState, useEffect} from "react";
+import { useSelector } from "react-redux";
+ 
 
 import "./Dashboard.css";
 
@@ -7,6 +10,12 @@ import SkillsXp from "./../devquest-components/SkillsXp";
 
 
 export default function Dashboard() {
+
+    const Level = useSelector((state) => state.counterXpLevel.level);
+    const xpPoints = useSelector((state) => state.counterXpLevel.xp);
+    const streak = useSelector((state) => state.counterStreak.streak);
+
+
 
 const mottos = [
     <p><span className="highlight">Code</span> is written in silence - respect is earned in <span className="highlight">commits</span></p>,
@@ -38,14 +47,14 @@ return (
     <div style={{width:"100%", height:"100%"}}>
         <div className="dashboard">
             <div className="Name">
-                <h2 className="welcome-back">Welcome back, <br/><span className="name-of-user">NAME</span> </h2>
+                <NameDashboard     />
             </div>
             <div className="Streak boxed">
                 <div className="dashboard-box"> 
-                   <div>
+                   <div className="streak-content">
                     <h3 className="streak-title">Your streak</h3>
                     <div className="streak-number-container">
-                        <span className="streak-number">0</span>
+                        <span className="streak-number">{streak}</span>
                         <span className="streak-fire">🔥</span>
                     </div>
                    </div>
@@ -54,7 +63,7 @@ return (
             <div className="Level boxed">
                 <div className="dashboard-box"> 
                     <h3 className="level-title">Your level</h3>
-                    <CircularBar value={1} percent={50} />
+                    <CircularBar value={Level} percent={xpPoints} />
                     
                 </div>
             </div>

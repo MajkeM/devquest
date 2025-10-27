@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  level: 1,
+  xp: 25,
 };
 
 const counterXpLevelSlice = createSlice({
   name: "counterXpLevel",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    levelUp: (state) => {
+      state.level += 1;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    addXp: (state, xpAmount) => {
+      state.xp += xpAmount.payload;
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    resetXp: (state) => {
+      state.xp = 0;
     },
   },
 });
 
-export const { increment, decrement, incrementByAmount } =
-  counterXpLevelSlice.actions;
+export const { levelUp, addXp } = counterXpLevelSlice.actions;
 export default counterXpLevelSlice.reducer; // <--- the important part
