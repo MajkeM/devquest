@@ -1,0 +1,192 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Satoshi-italic';
+    src: url('/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Satoshi', sans-serif;
+}
+
+
+
+/* Dashboard layout */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  height: 99%;
+  width: 92%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  grid-template-areas:
+    "Name Name Name Name Name"
+    "Streak Level Motto Motto Motto"
+    "Streak Level Motto Motto Motto"
+    "Skills Skills Skills Skills Skills"
+    "Skills Skills Skills Skills Skills"
+    "Skills Skills Skills Skills Skills";
+
+}
+
+.Name { grid-area: Name;  }
+
+.Streak { grid-area: Streak;  }
+
+.Level { grid-area: Level; }
+
+.Motto { grid-area: Motto; }
+
+.Skills { grid-area: Skills; }
+
+/* boxed layout */
+
+.boxed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dashboard-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #8B8B8B;
+    border-radius: 10px;
+}
+
+
+.Streak .dashboard-box{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.Level .dashboard-box{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Motto .dashboard-box{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.Skills .dashboard-box{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* welcome message */
+.welcome-back {
+    font-size: clamp(3.3rem,6vw, 8rem);
+    font-weight:900;
+    color: #ffffff;
+
+}
+
+.name-of-user {
+    font-family: 'Satoshi-italic', sans-serif;
+    font-weight: 100;
+    color: #fff;
+}   
+
+
+/* streak */
+.streak-number {
+    font-size: clamp(4rem,4vw, 10rem);
+    font-weight: 400;
+    color: #ffffff;
+    font-family: "Satoshi";
+}
+
+.streak-number-container {
+    font-family: "Satoshi";
+    text-align: center;
+    width: 60%;
+    height: 40%;
+    margin: auto auto;
+
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+}
+
+.streak-fire {
+    font-size: clamp(4rem,4vw, 10rem);
+    font-weight: 200;
+    color: #ffffff;
+}
+
+.streak-title {
+    font-family: "Satoshi";
+    font-size: clamp(2rem, 2vw, 5rem);
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+/* level */
+.level-title {
+    font-family: "Satoshi";
+    font-size: clamp(2rem, 2vw, 5rem);
+
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+/* motto */
+.motto-title {
+    font-family: "Satoshi";
+    font-size: clamp(2rem, 2vw, 5rem);
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.motto {
+    font-family: "Satoshi";
+    font-size: clamp(1.5rem, 1.8vw, 5rem);
+    text-align: center;
+    width: 100%;
+    font-weight: 100;
+    color: #ffffff;
+}
+
+.highlight {
+    color: #C6A2FF;
+    font-weight: 600;
+}
+

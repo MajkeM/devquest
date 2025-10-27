@@ -1,7 +1,6 @@
 @font-face {
-    font-family: 'Satohi';
-    src: url('./../fonts/Satohi-Variable.woff2') format('truetype');
-    font-weight: normal;
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
     font-style: normal;
 }
 
@@ -14,7 +13,8 @@
 
 :root {
     --borderColor: #7A7A7A;
-    --primaryColor: white;
+    --nonActiveColor: #727070;
+    --activeColor: #cdcdcd;
 }
 
 html, body {
@@ -22,7 +22,7 @@ html, body {
     height: 100%;
 }
 
-
+/* Layout */
 
 .devquest-layout {
     display: flex;
@@ -36,29 +36,76 @@ html, body {
 
 }
 
+/* Navigation */
+
 .devquest-nav {
     display: flex;
     flex-direction: column;
     width: 15%;
 }
 
+
 .devquest-nav .link {
     text-decoration: none;
-    font-family: "Satohi";
-    color: var(--primaryColor);
+    font-family: "Satoshi";
+    font-weight:normal;
+    margin-bottom: 5%;
+    transition: all 0.2s ease-in-out;
 }
+
+.devquets-nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    height: 65%;
+    color: var(--nonActiveColor);
+    font-size: clamp(15px, 1.2vw, 40px);
+
+}
+
+.devquest-nav-links-A, .devquest-nav-links-B {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 0 15%;
+
+}
+
+.active {
+    color: var(--activeColor);
+    transform: scale(1.1);
+    margin-left: 5%;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.nonActive {
+    color: var(--nonActiveColor);
+    font-size: clamp(15px, 1.2vw, 40px);
+}
+
+.logout{
+    color: var(--nonActiveColor);
+    text-decoration: none;
+}
+
+
+/* Content */
 
 .Outlet {
     width: 100%;
     height: 100%;
     color: white;
 
+
 }
+
+/* Background */
 
 .background-container {
     position: relative;
     width: 98%;
-    border: 1px solid var(--bordercolor);
+    border: 1px solid var(--borderColor);
     border-radius: 10px;
     height: 95%;
     margin-top: 2%;
@@ -91,10 +138,10 @@ html, body {
             width: 100vw;
             height: 100vh;
             /* Maximální velikost pro jemnou záři */
-            background: #A2C3FF;
+            background: #7f68cc;
             top: -50vh;
             right: -50vw;
-            animation: breathe 55s infinite alternate;
+            animation: breathe 30s infinite alternate;
             opacity: 0.7;
         }
 
@@ -102,10 +149,10 @@ html, body {
         .blob-blue-main {
             width: 80vw;
             height: 80vh;
-            background: #a3d5f7;
+            background: #1a18b0;
             top: -40vh;
             right: -40vw;
-            animation: breathe 45s infinite alternate-reverse;
+            animation: breathe 25s infinite alternate-reverse;
             opacity: 0.85;
         }
 
@@ -113,10 +160,10 @@ html, body {
         .blob-blue-hotspot {
             width: 50vw;
             height: 50vh;
-            background: #e1f5fe;
+            background: #70b2d3;
             top: -25vh;
             right: -25vw;
-            animation: breathe 35s infinite alternate;
+            animation: breathe 20s infinite alternate;
             opacity: 0.9;
         }
 
@@ -126,10 +173,10 @@ html, body {
         .blob-lavender-bridge {
             width: 70vw;
             height: 70vh;
-            background: #958cf7;
+            background: #6448ae;
             top: -15vh;
             left: -10vw;
-            animation: moveGeneral 71s infinite alternate;
+            animation: moveGeneral 20s infinite alternate;
             opacity: 0.65;
         }
 
@@ -139,7 +186,7 @@ html, body {
             background: #d37cef;
             top: 20vh;
             left: 15vw;
-            animation: moveGeneral 61s infinite alternate-reverse;
+            animation: moveGeneral 20s infinite alternate-reverse;
             opacity: 0.75;
         }
 
@@ -152,17 +199,17 @@ html, body {
             background: #af31ab;
             bottom: -40vh;
             left: -15vw;
-            animation: moveGeneral 73s infinite alternate;
+            animation: moveGeneral 20s infinite alternate;
             opacity: 0.85;
         }
 
         .blob-purple-base {
             width: 70vw;
             height: 70vh;
-            background: #3b185f;
+            background: #1c0236;
             bottom: -50vh;
             left: -40vw;
-            animation: moveGeneral 97s infinite alternate;
+            animation: moveGeneral 20s infinite alternate;
             opacity: 0.9;
         }
 
@@ -196,3 +243,5 @@ html, body {
                 transform: translate(5vw, -5vh) scale(1.05);
             }
         }
+
+
