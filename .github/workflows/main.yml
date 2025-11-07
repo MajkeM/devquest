@@ -1,25 +1,35 @@
-name: Deploy Tour de App
-
+name: Deploy
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Install Node
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Deploy to TdA
+
+      - name: Install & Build
         run: |
-          curl -X POST https://api.tourdeapp.cz/deploy \
-          -H "Authorization: Bearer ${{ secrets.TDA_TOKEN }}" \
-          -F "file=@build.zip"
+          npm ci
+          npm run build   # outputs ./dist by default
+
+      - name: Zip build
+        run: |
+          zip -r build.zip dist
+          ls -lah build.zip
+
+      - name: Deploy via API
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          curl -sS --fail-with-body \
+            -X POST https://api.tourdeapp.cz/deploy \
+            -H "Authorization: Bearer $DEPLOY_TOKEN" \
+            -F "file=@build.zip;type=application/zip"
