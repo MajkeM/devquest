@@ -1,4 +1,4 @@
-import "../Dashboard/dashboard.css";
+import "./../Dashboard/Dashboard.css";
 import React from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
