@@ -1,6 +1,6 @@
-import './../devquest-styles/circle.css';
+import '../TDA-styles/circle.css';
 
-function CircularBar({ value = 1, percent = 100 }) {
+function CircularBar({ value = 1, percent = 0 }) {
   // percent: 0-100, value: display number
   // 100 is full circle, 75 is 75%, etc.
   return (

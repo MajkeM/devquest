@@ -1,4 +1,4 @@
-import "./../devquest-styles/SkillsXp.css";
+import "../devquest-styles/SkillsXp.css";
 import { useSelector } from "react-redux";
 
 
@@ -29,7 +29,7 @@ export default function SkillsXp() {
     return (
 
 <div className="parent">
-    <div className="div1">Your <span className="highlight">progress 📈</span></div>
+    <div className="div1">Váš  <span className="highlight">progress 📈</span></div>
     <div className="div2"></div>
     <div className="div3">Today</div>
     <div className="div4">This Week</div>

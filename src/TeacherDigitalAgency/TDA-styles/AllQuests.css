@@ -1,0 +1,9 @@
+.all-quests-section {
+    position: relative;
+    z-index: 1;
+}
+
+
+.all-quests-header {
+    display: flex;
+}

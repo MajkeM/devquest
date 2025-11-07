@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   level: 1,
-  xp: 25,
+  xp: 50,
 };
 
 const counterXpLevelSlice = createSlice({

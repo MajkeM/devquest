@@ -1,0 +1,95 @@
+/* CourseProgressOverview styles - clean, compact, responsive */
+.cpo { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+}
+
+.cpo-header { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 8px; 
+}
+
+.cpo-header h3 { 
+  margin: 0; 
+  font-size: clamp(0.9rem, 1.4vw, 1.4rem); 
+  color: #fff; 
+}
+
+.cpo-kpis { 
+  display: grid; 
+  grid-template-columns: repeat(4, minmax(0, 1fr)); 
+  gap: 8px; 
+}
+
+.kpi { 
+  background: rgba(255,255,255,0.06); 
+  border: 1px solid rgba(255,255,255,0.15); 
+  border-radius: 10px; 
+  padding: 10px 12px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4px;
+}
+
+.kpi-label { 
+  font-size: clamp(0.6rem, 0.9vw, 0.9rem); 
+  color: rgba(255,255,255,0.8); 
+}
+
+.kpi-value { 
+  font-size: clamp(0.9rem, 1.4vw, 1.3rem); 
+  color: #fff; 
+  font-weight: 700; 
+}
+
+.kpi-date { 
+  font-weight: 500; 
+}
+
+.cpo-list { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 8px; 
+  overflow: auto; 
+}
+
+.cpo-item { 
+  background: rgba(255,255,255,0.04); 
+  border: 1px solid rgba(255,255,255,0.12); 
+  border-radius: 10px; 
+  padding: 12px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.cpo-item-title { 
+  color: #fff; 
+  font-weight: 600; 
+  font-size: clamp(0.8rem, 1.1vw, 1.2rem); 
+}
+
+.cpo-item-meta { 
+  display: flex; 
+  gap: 14px; 
+}
+
+.cpo-item .meta { 
+  color: rgba(255,255,255,0.85); 
+  font-size: clamp(0.7rem, 0.95vw, 1rem); 
+}
+
+.cpo-empty { 
+  color: rgba(255,255,255,0.85); 
+  font-size: clamp(0.8rem, 1vw, 1.1rem); 
+}
+
+@media (max-width: 720px) { 
+  .cpo-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cpo-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
