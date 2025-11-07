@@ -4,14 +4,14 @@ import './styles/App.css'
 
 import Login from './Login';
 import Register from './Register';
-import Devquest from './DevQuest';
+import TDA from './TeacherDigitalAgency';
 import Welcome from './Welcome';
-import Profile from './DevQuest/Profile';
-import Quests from './DevQuest/Quests';
-import Dashboard from './DevQuest/Dashboard';
-import Leaderboard from './DevQuest/Leaderboard';
-import Settings from './DevQuest/Settings';
-import Credits from './DevQuest/Credits';
+import Profile from './TeacherDigitalAgency/Profile';
+import Quests from './TeacherDigitalAgency/Quests';
+import Dashboard from './TeacherDigitalAgency/Dashboard';
+import Leaderboard from './TeacherDigitalAgency/Leaderboard';
+import Settings from './TeacherDigitalAgency/Settings';
+import Credits from './TeacherDigitalAgency/Credits';
 
 
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route  path="/devquest/*" element={<Devquest />} >
+        <Route path="/teacher_digital_agency/*" element={<TDA />} >
           <Route path="profile" element={<Profile />} />
           <Route path="quests" element={<Quests />} />
           <Route index element={<Dashboard />} />

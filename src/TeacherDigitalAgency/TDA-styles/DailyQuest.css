@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
+}
+
+.daily-quest {
+    width: 95%;
+    padding: 2%;
+
+
+    margin: 3% auto;
+
+    height: auto;
+
+    display: flex;
+    position: relative;
+    z-index: 1;
+    justify-content: space-around;
+    background:rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    
+}
+
+.quests-scroll {
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    /* Optional: for smoother look */
+    scrollbar-width: thin;
+    scrollbar-color: #888 #222;
+}
+
+
+
+.daily-quest-rewards {
+    width: 55%;
+    height: 100%;
+    padding: 2%;
+    border-radius: 10px;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.daily-quest-rewards h2 {
+    margin-bottom: 20px;
+    font-family: "Satoshi", sans-serif;
+    line-height: 1.3;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 5vw, 5rem);
+}
+
+.daily-quest-rewards p {
+    margin-bottom: 20px;
+}
+
+.daily-quest-rewards ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+.daily-quest-rewards button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #00ff99;
+    border: none;
+    border-radius: 5px;
+    color: #1e1e1e;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.daily-quest-rewards button:hover {
+    background-color: #00cc66;
+}
+
+.daily-quest-description {
+    max-width: 50%;
+    width: auto;
+    padding: 2%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
+    border-radius: 10px;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.daily-quest-description h3 {
+    margin-bottom: 20px;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    
+    font-size: clamp(1.3rem, 2.5vw, 2.5rem);
+}
+
+.daily-quest-description p {
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-align: left;
+    font-family: "Satoshi", sans-serif;
+    font-weight: 300;
+    width: 60%;
+}
