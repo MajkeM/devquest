@@ -21,11 +21,11 @@ containers:
     port: 80
 build:
   - name: web
-    context: ./apps/web
-    dockerfile: ./apps/web/Dockerfile
+    context: ./src
+    dockerfile: ./src/Dockerfile
   - name: server
-    context: ./apps/server
-    dockerfile: ./apps/server/Dockerfile
+    context: ./api
+    dockerfile: ./api/Dockerfile
   - name: caddy
-    context: ./apps/caddy
-    dockerfile: ./apps/caddy/Dockerfile
+    context: ./caddy
+    dockerfile: ./caddy/Dockerfile
