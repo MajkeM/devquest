@@ -5,26 +5,31 @@ on:
     branches:
       - main
 
-permissions:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1️⃣ Stáhne repozitář
+      - name: Check Out Repo
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Remove nested template git repo to avoid submodule errors
+      # 2️⃣ Odstraní .git z template, aby TdA neměl submodule error
+      - name: Remove nested template git repo
         run: |
           if [ -d "predloha/TdA-react-express-mysql-template/.git" ]; then
             rm -rf predloha/TdA-react-express-mysql-template/.git
             echo "Removed nested .git directory from template.";
           fi
 
-  contents: read
+      # 3️⃣ Nainstaluje závislosti a postaví build React appky
+      - name: Install & Build React
+        run: |
+          npm ci
+          npm run build   # nebo `npm run build --prefix predloha/TdA-react-express-mysql-template` pokud je app v podadresáři
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check Out Repo
-        uses: actions/checkout@v4
-
+      # 4️⃣ Upload na TdA
       - name: Upload to TdA
         uses: Student-Cyber-Games/upload-app@tda-26
         with:
