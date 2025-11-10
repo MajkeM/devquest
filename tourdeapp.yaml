@@ -1,5 +1,4 @@
 # $schema: https://portalbush.tourde.cloud/static/schema.json
-slug: 404-interactions
 exposedPort: 80
 containers:
   - name: web
