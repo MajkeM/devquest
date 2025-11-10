@@ -3,10 +3,10 @@ exposedPort: 80
 containers:
   - name: web
     image: registry.tourde.cloud/<slug>/web
-    port: 3001
+    port: 5173
   - name: server
     image: registry.tourde.cloud/<slug>/server
-    port: 3000
+    port: 3001
     env:
       DATABASE_URL: mysql://root:password@localhost:3306/tda_app
   - name: mysql
@@ -21,8 +21,8 @@ containers:
     port: 80
 build:
   - name: web
-    context: ./src
-    dockerfile: ./src/Dockerfile
+    context: .
+    dockerfile: ./Dockerfile
   - name: server
     context: ./api
     dockerfile: ./api/Dockerfile
