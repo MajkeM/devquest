@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-const PORT = globalThis["process"]?.env?.PORT || 3001;
+const PORT = Number(globalThis["process"]?.env?.PORT) || 3000;
 
 app.use(cors());
 app.use(express.json());
