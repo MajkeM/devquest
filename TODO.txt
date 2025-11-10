@@ -2,6 +2,8 @@ Complete structure and basics
 
 main page - register/login => DevQuest app. Do basis and router 
 
+    need to fix the tourdecloud. 
+
     app router ✅
     devquest layout router ✅
     dashboard ✅
