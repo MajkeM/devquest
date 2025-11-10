@@ -19,6 +19,7 @@ FROM nginx:alpine AS runner
 # Copy built assets
 COPY --from=builder /app/dist /usr/share/nginx/html
 # Provide nginx config to listen on 3001 and SPA fallback
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Using repo root as build context, so reference the file with its repo path
+COPY apps/web/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 3001
 CMD ["nginx","-g","daemon off;"]

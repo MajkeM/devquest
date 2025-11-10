@@ -15,14 +15,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 2️⃣ Odstraní .git z template, aby TdA neměl submodule error
-      - name: Remove nested template git repo
-        run: |
-          if [ -d "predloha/TdA-react-express-mysql-template/.git" ]; then
-            rm -rf predloha/TdA-react-express-mysql-template/.git
-            echo "Removed nested .git directory from template.";
-          fi
-
       # 3️⃣ Nainstaluje závislosti a postaví build React appky
       - name: Install & Build React
         run: |

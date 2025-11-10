@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 TODO.txt
-
+predloha
 
 # Editor directories and files
 .vscode/*
