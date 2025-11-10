@@ -6,6 +6,16 @@ on:
       - main
 
 permissions:
+        with:
+          fetch-depth: 0
+
+      - name: Remove nested template git repo to avoid submodule errors
+        run: |
+          if [ -d "predloha/TdA-react-express-mysql-template/.git" ]; then
+            rm -rf predloha/TdA-react-express-mysql-template/.git
+            echo "Removed nested .git directory from template.";
+          fi
+
   contents: read
 
 jobs:
