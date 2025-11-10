@@ -1,35 +1,21 @@
-name: Deploy
+name: Build and push Web App to TdA
+
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+
+permissions:
+  contents: read
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Check Out Repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Upload to TdA
+        uses: Student-Cyber-Games/upload-app@tda-26
         with:
-          node-version: 20
-
-      - name: Install & Build
-        run: |
-          npm ci
-          npm run build   # outputs ./dist by default
-
-      - name: Zip build
-        run: |
-          zip -r build.zip dist
-          ls -lah build.zip
-
-      - name: Deploy via API
-        env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        run: |
-          curl -sS --fail-with-body \
-            -X POST https://api.tourdeapp.cz/deploy \
-            -H "Authorization: Bearer $DEPLOY_TOKEN" \
-            -F "file=@build.zip;type=application/zip"
+          tdc_token: ${{ secrets.TDC_TOKEN }}
